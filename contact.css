@@ -1,0 +1,533 @@
+body {
+    font-family: 'Stay Enjoy Personal Use', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.navbar {
+    backdrop-filter: blur(3px);
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    animation: slideDown 1s ease-out;
+    font-family: 'Stay Enjoy Personal Use', sans-serif;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s, padding 0.3s;
+    padding: 10px;
+    display: block;
+}
+
+.navbar a:hover {
+    padding: 10px 30px;
+    border-radius: 15px;
+    color: #ffffff;
+    background-color: black;
+}
+
+.logo img {
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 100px auto 20px;
+    padding: 20px;
+    background-color: #01fff2;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.contact-container p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-details {
+    margin-bottom: 30px;
+}
+
+.contact-details h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.contact-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-item h3 {
+    margin: 0 0 10px 0;
+    color: #3498db;
+}
+
+.social-media {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.social-media h2 {
+    font-size: 1.5rem;
+}
+
+.fb-button {
+    background-color: #0004ff;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.fb-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.fb-button.clicked {
+    animation: pulse 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.contact-form {
+    margin-bottom: 30px;
+}
+
+.contact-form h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.contact-form button {
+    background-color: #0004ff;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #2980b9;
+}
+
+.map {
+    display: block;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.map a {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.map img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.map a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.map a:hover img {
+    transform: scale(1.1);
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer p {
+    margin: 0 0 10px 0;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.footer a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.contact-details {
+    animation: fadeInLeft 1s ease-out;
+}
+
+.social-media {
+    animation: fadeInRight 1s ease-out 0.5s both;
+}
+
+.contact-form {
+    animation: fadeInLeft 1s ease-out 1s both;
+}
+
+.map {
+    animation: fadeInRight 1s ease-out 1.5s both;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .navbar li {
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    .logo {
+        align-self: flex-end;
+        margin-top: 10px;
+    }
+
+    .contact-container {
+        margin-top: 200px; /* Adjusted for vertical navbar */
+        padding: 15px;
+    }
+
+    .contact-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .contact-item {
+        padding: 10px;
+    }
+
+    .fb-button {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 8px;
+    }
+
+    .contact-form button {
+        padding: 12px 25px;
+    }
+
+    .map img {
+        max-width: 250px;
+    }
+
+    .footer .container {
+        padding: 0 10px;
+    }
+
+    .footer ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .navbar ul {
+        padding: 10px 50px;
+    }
+
+    .contact-container {
+        margin-top: 120px;
+        padding: 25px;
+    }
+
+    .contact-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .contact-item {
+        padding: 18px;
+    }
+
+    .fb-button {
+        padding: 16px 35px;
+        font-size: 17px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 12px;
+    }
+
+    .contact-form button {
+        padding: 16px 35px;
+    }
+
+    .map img {
+        max-width: 350px;
+    }
+
+    .footer .container {
+        padding: 0 30px;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .navbar ul {
+        padding: 10px 120px;
+    }
+
+    .contact-container {
+        margin-top: 130px;
+        padding: 30px;
+        max-width: 1400px;
+    }
+
+    .contact-container h1 {
+        font-size: 3rem;
+    }
+
+    .contact-details h2,
+    .social-media h2,
+    .contact-form h2 {
+        font-size: 2rem;
+    }
+
+    .contact-item {
+        padding: 20px;
+    }
+
+    .fb-button {
+        padding: 18px 40px;
+        font-size: 18px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    .contact-form button {
+        padding: 18px 40px;
+        font-size: 18px;
+    }
+
+    .map img {
+        max-width: 400px;
+    }
+
+    .footer .container {
+        padding: 0 40px;
+    }
+}
+
+@media (min-width: 1441px) {
+    .navbar ul {
+        padding: 10px 150px;
+    }
+
+    .contact-container {
+        margin-top: 140px;
+        padding: 40px;
+        max-width: 1600px;
+    }
+
+    .contact-container h1 {
+        font-size: 3.5rem;
+    }
+
+    .contact-details h2,
+    .social-media h2,
+    .contact-form h2 {
+        font-size: 2.5rem;
+    }
+
+    .contact-item {
+        padding: 25px;
+    }
+
+    .fb-button {
+        padding: 20px 45px;
+        font-size: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 16px;
+        font-size: 18px;
+    }
+
+    .contact-form button {
+        padding: 20px 45px;
+        font-size: 20px;
+    }
+
+    .map img {
+        max-width: 500px;
+    }
+
+    .footer .container {
+        padding: 0 60px;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 1024px) {
+    .contact-container {
+        margin-top: 110px;
+    }
+
+    .contact-container h1 {
+        font-size: 2rem;
+    }
+
+    .map img {
+        max-width: 280px;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 769px) {
+    .contact-container {
+        padding: 20px;
+    }
+
+    .contact-item {
+        padding: 12px;
+    }
+
+    .map img {
+        max-width: 320px;
+    }
+}

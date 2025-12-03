@@ -1,0 +1,669 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 100px;
+    background-size: contain;
+    color: #333;
+}
+
+.navbar {
+    backdrop-filter: blur(3px);
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    animation: slideDown 1s ease-out;
+    font-family: 'Stay Enjoy Personal Use', sans-serif;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    transition: all 0.3s ease;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+    padding: 10px;
+}
+
+.navbar a:hover {
+    padding: 10px 30px;
+    border-radius: 15px;
+    color: #ffffff;
+    background-color: black;
+}
+
+.icon {
+    margin-right: 8px;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #000000;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.hamburger:hover {
+    color: #000000;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.title {
+    background-image: url(../images/homebg.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: start;
+    justify-content: flex-end;
+    text-align: center;
+    color: brown;
+    font-family: 'Thirthy', sans-serif;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.title-content h1 {
+    font-size: 4rem;
+    margin: 0;
+    margin-top: 120px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-right: 80px;
+}
+
+.title-content p {
+    font-size: 1.2rem;
+    margin: 10px 0 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    margin-right: 170px;
+}
+
+.gallery {
+    padding: 50px 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.gallery h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #000000;
+    font-family: 'Hunters', sans-serif;
+    animation: float 5s ease-in-out infinite, glow 5s ease-in-out infinite alternate;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.8);
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.gallery-item:hover .overlay-text {
+    opacity: 1;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.modal img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    animation: zoomIn 0.5s ease-out;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #000000;
+}
+
+.menu {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.menu .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.menu h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #000000;
+    font-family: 'Hunters', sans-serif;
+    animation: float 5s ease-in-out infinite, glow 5s ease-in-out infinite alternate;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.menu-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.menu-item img:hover {
+    transform: scale(1.8);
+}
+
+.menu-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 700px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.menu-modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.menu-modal-content p {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.5;
+}
+
+.menu-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu-close:hover {
+    color: #000;
+}
+
+.rooms {
+    padding: 50px 0;
+}
+
+.rooms .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.rooms h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #000000;
+    font-family: 'Hunters', sans-serif;
+    animation: float 5s ease-in-out infinite, glow 5s ease-in-out infinite alternate;
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.room-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.room-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.room-item img:hover {
+    transform: scale(1.8);
+}
+
+.rooms-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.rooms-modal-content {
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 700px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.rooms-modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.rooms-modal-content p {
+    font-size: 1.1em;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+.rooms-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.rooms-close:hover {
+    color: #000;
+}
+
+.footer {
+    background: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+.footer li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.footer a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px aliceblue, 0 0 20px aliceblue, 0 0 30px rgb(66, 2, 71), 0 0 50px rgb(66, 2, 71);
+    }
+    50% {
+        text-shadow: 0 0 20px aliceblue, 0 0 30px aliceblue, 0 0 40px rgb(66, 2, 71), 0 0 60px rgb(66, 2, 71);
+    }
+    100% {
+        text-shadow: 0 0 10px aliceblue, 0 0 20px aliceblue, 0 0 30px rgb(66, 2, 71), 0 0 50px rgb(66, 2, 71);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(1.0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .navbar ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #000000;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        display: none;
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .title-content h1 {
+        font-size: 2rem;
+    }
+
+    .title-content p {
+        font-size: 1rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .gallery h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .title-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .title-content p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 1024px) {
+    .navbar ul {
+        padding: 10px 50px;
+    }
+
+    .title-content h1 {
+        font-size: 3.5rem;
+        margin-right: 40px;
+    }
+
+    .title-content p {
+        font-size: 1.1rem;
+        margin-right: 100px;
+    }
+
+    .gallery-grid, .menu-grid, .rooms-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 15px;
+    }
+
+    .gallery-item img, .menu-item img, .room-item img {
+        height: 220px;
+    }
+
+    .modal img {
+        max-height: 80vh;
+    }
+
+    .menu-modal-content, .rooms-modal-content {
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .navbar ul {
+        padding: 10px 120px;
+    }
+
+    .title-content h1 {
+        font-size: 4.5rem;
+        margin-right: 100px;
+    }
+
+    .title-content p {
+        font-size: 1.3rem;
+        margin-right: 200px;
+    }
+
+    .gallery h2, .menu h2, .rooms h2 {
+        font-size: 3rem;
+    }
+
+    .gallery-grid, .menu-grid, .rooms-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 25px;
+    }
+
+    .gallery-item img, .menu-item img, .room-item img {
+        height: 250px;
+    }
+
+    .modal img {
+        max-height: 90vh;
+    }
+
+    .menu-modal-content, .rooms-modal-content {
+        max-width: 800px;
+    }
+
+    .footer .container {
+        padding: 0 40px;
+    }
+}
+
+@media (min-width: 1441px) {
+    .navbar ul {
+        padding: 10px 150px;
+    }
+
+    .title {
+        height: 80vh;
+    }
+
+    .title-content h1 {
+        font-size: 5rem;
+        margin-right: 150px;
+    }
+
+    .title-content p {
+        font-size: 1.5rem;
+        margin-right: 250px;
+    }
+
+    .gallery h2, .menu h2, .rooms h2 {
+        font-size: 3.5rem;
+    }
+
+    .gallery-grid, .menu-grid, .rooms-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+    }
+
+    .gallery-item img, .menu-item img, .room-item img {
+        height: 280px;
+    }
+
+    .modal img {
+        max-width: 80vw;
+        max-height: 90vh;
+    }
+
+    .menu-modal-content, .rooms-modal-content {
+        max-width: 1000px;
+    }
+
+    .footer .container {
+        padding: 0 60px;
+    }
+}

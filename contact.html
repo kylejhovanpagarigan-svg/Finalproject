@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Finalproject/contact.css">
+    <link href="https://fonts.cdnfonts.com/css/stay-enjoy-personal-use" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Contact - Taguipuro Paoay Lake Hotel and Resort</title>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="../Finalproject/index.html"><i class="fas fa-home icon"></i>Home</a></li>
+            <li><a href="../Finalproject/about.html"><i class="fas fa-info-circle icon"></i>About us</a></li>
+            <li><a href="../Finalproject/menu.html"><i class="fas fa-utensils navbar-icon"></i>Menu</a></li>
+            <li><a href="../Finalproject/contact.html"><i class="fas fa-envelope icon"></i>Contact info</a></li>
+            <li><a href="/forms.html"><i class="fas fa-user-plus icon"></i>Sign up</a></li>
+        </ul>
+        <div class="logo">
+            <img src="../Finalproject/logo.jpg" alt="Taguipuro logo" width="75px" height="75px">
+        </div>
+    </nav>
+
+    <main class="contact-container">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you! Reach out for reservations, inquiries, or any questions about Taguipuro Paoay Lake Hotel and Resort.</p>
+
+        <section class="contact-details">
+            <h2>Get in Touch</h2>
+            <div class="contact-item">
+                <h3>Address</h3>
+                <p>#22 Nagbacalan - Sungadan Road, Paoay, Ilocos Norte Philippines</p>
+            </div>
+            <div class="contact-item">
+                <h3>Phone</h3>
+                <p>+63 918 903 5477</p>
+            </div>
+            <div class="contact-item">
+                <h3>Email</h3>
+                <p>taguipuro.paoaylake@gmail.com</p>
+            </div>
+            <div class="contact-item">
+                <h3>Business Hours</h3>
+                <p>Monday - Sunday: 8:00 AM - 10:00 PM</p>
+            </div>
+        </section>
+
+        <section class="social-media">
+            <h2>Follow Us</h2>
+            <button class="fb-button" id="fb-button">Visit Our Facebook Page</button>
+        </section>
+
+        <section class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form action="../Finalproject/menu.html">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">SUBMIT</button>
+            </form>
+        </section>
+
+        <button class="map">
+            <a href="https://www.google.com/maps/place/Taguipuro+Paoay+Lake/@18.1119757,120.5297687,828m/data=!3m2!1e3!4b1!4m6!3m5!1s0x338ec1e2b4ef428d:0x75d8b085bbe7e36b!8m2!3d18.1119757!4d120.5297687!16s%2Fg%2F11lfzpc38x?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D">
+                <img src="../Finalproject/map.jpg" alt="Map to Taguiporo Resort">
+            </a>
+        </button>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Taguiporo Paoay Lake Resort. All rights reserved.</p>
+            <ul>
+                <li><a href="/privacy.html">Privacy Policy</a></li>
+                <li><a href="/terms.html">Terms of Service</a></li>
+                <li><a href="/contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('fb-button').addEventListener('click', function() {
+            const button = this;
+            button.classList.add('clicked');
+            setTimeout(function() {
+                window.open('https://www.facebook.com/taguipuropaoaylakeresort', '_blank');
+                button.classList.remove('clicked');
+            }, 300);
+        });
+    </script>
+</body>
+</html>
